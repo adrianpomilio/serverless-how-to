@@ -1,0 +1,31 @@
+service: lesson-3
+
+provider:
+  name: aws
+  runtime: nodejs4.3
+
+functions:
+    getItems:
+        handler: handler.getItems
+        events:
+            - http:
+               path: item
+               method: get
+    postItem:
+         handler: handler.postItem
+         events:
+             - http:
+                path: item
+                method: post
+    getItem:
+          handler: handler.getItem
+          events:
+              - http:
+                 path: item/{itemId}
+                 method: get
+    deleteItem:
+           handler: handler.deleteItem
+           events:
+               - http:
+                  path: item/{itemId}
+                  method: delete
