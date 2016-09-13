@@ -29,12 +29,14 @@ We are going to create a minimal serverless application.
 2. > serverless create --template aws-nodejs --path lesson-1
     * this will scaffold a service that uses AWS as a provider and nodejs as your runtime.
     * you could alternately run ( serverless create --template aws-nodejs ) and the service would scaffold in the current directory
-
+3. > serverless deploy
+    * This will deploy your service to AWS.
 
 ### Lesson 2
 We are going to create a basic application and leverage the api-gateway.
 1. > cd serverless-examples
 2. > serverless create --template aws-nodejs --path lesson-2
+
 
 ### Lesson 3
 We are going to create a basic application with endpoints and return static data.
