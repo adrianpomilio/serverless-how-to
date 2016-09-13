@@ -21,6 +21,7 @@ You will need to have the following software and elements configured prior to st
 
 ## Lessons
 We will be leveraging the Serverless framework for many of these lessons.  Please be sure to have your IAM and Serverless setups completed.
+You will be able to create everything following the steps, or you can simply look at the code for inspiration or to help you out.
 
 ### Lesson 1
 We are going to create a minimal serverless application.
