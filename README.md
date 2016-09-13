@@ -33,6 +33,10 @@ We are going to create a minimal serverless application.
 3. > serverless deploy
     * This will deploy your service to AWS.
 
+* BONUS - Enter the following command:  
+    * serverless deploy --noDeploy
+    * compare the json file found in the .serverlss directory to the serverless.yml file.
+
 ### Lesson 2
 We are going to create a basic application and leverage the api-gateway.
 
