@@ -28,41 +28,37 @@ functions:
         path: items/{itemId}
         method: delete
 
-resources:
-  Resources:
-    IamPolicyLambdaDynamo:
-      Type: AWS::IAM::Policy
-      Properties:
-        PolicyName: dev-com-sb-actionboard-auth-dynamodb
-        PolicyDocument:
-          Version: "2012-10-17"
-          Statement:
-          - Effect: Allow
-            Action:
-            - dynamodb:Scan
-            - dynamodb:PutItem
-            - dynamodb:GetItem
-            - dynamodb:DeleteItem
-            - dynamodb:Query
-            - dynamodb:UpdateItem
-            Resource:
-            - "Fn::Join": ["", ["arn:aws:dynamodb:", {"Ref": "AWS::Region"}, ":", {"Ref": "AWS::AccountId"}, ":table/items*"]]
-        Roles:
-        - "Ref": "IamRoleLambda"
-    TaskTable:
-      Type: "AWS::DynamoDB::Table"
-      Properties:
-        AttributeDefinitions:
-        - AttributeName: "itemId"
-          AttributeType: "S"
-        - AttributeName: "description"
-          AttributeType: "S"
-        KeySchema:
-        - AttributeName: "itemId"
-          KeyType: "HASH"
-        - AttributeName: "description"
-          KeyType: "RANGE"
-        ProvisionedThroughput:
-          ReadCapacityUnits: 1
-          WriteCapacityUnits: 1
-        TableName: "items"
+        resources:
+          Resources:
+            DynamoDbTable:
+              Type: AWS::DynamoDB::Table
+              Properties:
+                TableName: items
+                AttributeDefinitions:
+                    - AttributeName: itemId
+                      AttributeType: S
+                    - AttributeName: description
+                      AttributeType: S
+                KeySchema:
+                  - AttributeName: itemId
+                    KeyType: HASH
+                ProvisionedThroughput:
+                  ReadCapacityUnits: 5
+                  WriteCapacityUnits: 5
+            DynamoDBIamPolicy:
+              Type: AWS::IAM::Policy
+              DependsOn: TokensDynamoDbTable
+              Properties:
+                PolicyName: lambda-dynamodb
+                PolicyDocument:
+                  Version: '2012-10-17'
+                  Statement:
+                    - Effect: Allow
+                      Action:
+                        - dynamodb:GetItem
+                        - dynamodb:PutItem
+                        - dynamodb:Scan
+                        - dynamodb:DeleteItem
+                      Resource: arn:aws:dynamodb:us-east-1:990312627820:table/items
+                Roles:
+                  - Ref: IamRoleLambda
