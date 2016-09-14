@@ -1,5 +1,5 @@
 # Static Site Serverless
-This group of lessons will focus on creating a static website that can communicate with a lambda function.
+This group of lessons will focus on creating a static website that we will use to communicate with a lambda function in another section.
 
 ### Lesson 1
 We are going to create an S3 bucket via the AWS console.
