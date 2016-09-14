@@ -67,13 +67,13 @@ Create a shell script that contains that can invoke the aws cli so you don't hav
 
 1. create a file named s3upload.sh
 
---
-```
-#!/bin/sh
-aws s3 sync www s3://serverless-how-to --acl "public-read"
+    --
+    ```
+    #!/bin/sh
+    aws s3 sync www s3://serverless-how-to --acl "public-read"
 
-```
---
+    ```
+    --
 
 2. give it execute permissions > chmod u+x s3upload.sh
 3. Run the script > ./s3upload.sh
