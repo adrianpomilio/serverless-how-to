@@ -11,10 +11,10 @@ This material is for the person who has:
 + Basic AWS experience
 
 
-##  Environment Setup
+##  How do I get started?
 You will need to setup your AWS and local environments to leverage the examples.
 
-+ [Getting set up](setup/README.md)
++ [Getting started](getting-started/README.md)
 
 ## Lessons
 We have broken up our lessons into various categories, each focusing on a specific serverless examples.

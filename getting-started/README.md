@@ -1,4 +1,4 @@
-# Getting Started
+# Setup
 You will need to have the following software and elements configured prior to starting the lessons.
 
 + Latest version of node and npm installed
