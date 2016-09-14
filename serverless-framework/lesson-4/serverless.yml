@@ -1,0 +1,67 @@
+service: lesson-4
+provider: aws
+runtime: nodejs4.3
+
+functions:
+  getItems:
+    handler: handler.getItems
+    events:
+    - http:
+        path: items/{itemId}
+        method: get
+  postItem:
+    handler: handler.postItem
+    events:
+    - http:
+        path: items
+        method: post
+  putItem:
+    handler: handler.putItem
+    events:
+    - http:
+        path: items/{itemId}
+        method: put
+  deleteItem:
+    handler: handler.deleteItem
+    events:
+    - http:
+        path: items/{itemId}
+        method: delete
+
+    resources:
+      Resources:
+        DynamoDbTable:
+          Type: AWS::DynamoDB::Table
+          Properties:
+            TableName: items
+            AttributeDefinitions:
+                - AttributeName: itemId
+                  AttributeType: S
+                - AttributeName: description
+                  AttributeType: S
+            KeySchema:
+              - AttributeName: itemId
+                KeyType: HASH
+            ProvisionedThroughput:
+              ReadCapacityUnits: 5
+              WriteCapacityUnits: 5
+        DynamoDBIamPolicy:
+          Type: AWS::IAM::Policy
+          DependsOn: TokensDynamoDbTable
+          Properties:
+            PolicyName: lambda-dynamodb
+            PolicyDocument:
+              Version: '2012-10-17'
+              Statement:
+                - Effect: Allow
+                  Action:
+                    - dynamodb:DescribeTable
+                    - dynamodb:Query
+                    - dynamodb:Scan
+                    - dynamodb:GetItem
+                    - dynamodb:PutItem
+                    - dynamodb:UpdateItem
+                    - dynamodb:DeleteItem
+                  Resource: arn:aws:dynamodb:*:*:table/items
+            Roles:
+              - Ref: IamRoleLambda
