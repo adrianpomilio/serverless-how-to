@@ -41,7 +41,7 @@ We are going to create an S3 bucket via the AWS console.
     }
     ```
     --
-    
+
 17. Now visit your url :)
 
 ### Lesson 2
@@ -62,5 +62,18 @@ Moving your code to the S3 bucket
 
 Try both options.
 
-### Lesson 4
-Wait... I am getting an
+### BONUS
+Create a shell script that contains that can invoke the aws cli so you don't have to keep typing stuff.
+
+1. create a file named s3upload.sh
+
+--
+```
+#!/bin/sh
+aws s3 sync www s3://serverless-how-to --acl "public-read"
+
+```
+--
+
+2. give it execute permissions > chmod u+x s3upload.sh
+3. Run the script > ./s3upload.sh
