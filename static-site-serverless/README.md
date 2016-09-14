@@ -44,9 +44,10 @@ We are going to create an S3 bucket via the AWS console.
 
 ### Lesson 2
 Creating your site
+
 1. Create a directory called www (it can be any name)
 2. > cd www
-3. Inside www 
+3. Inside www
     1. create a basic index.html page
     2. Create a basic error.html page
 
