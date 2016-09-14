@@ -20,6 +20,7 @@ We are going to create an S3 bucket via the AWS console.
 14. Select 'Permissions'
 15. Select 'Edit Bucket Policy' - [AWS bucket policies]:http://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteAccessPermissionsReqd.html
 16. Enter the following bucket policy:
+
     --
     ```JavaScript
     {
@@ -40,6 +41,7 @@ We are going to create an S3 bucket via the AWS console.
     }
     ```
     --
+    
 17. Now visit your url :)
 
 ### Lesson 2
