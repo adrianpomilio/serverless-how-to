@@ -3,9 +3,9 @@ There are a few things that you will need to do in advance of working through th
 
 You may skip any of the steps below if you already have satisfied the requirements for the step.
 
-* [AWS requirements](#AWS requirements)
-* [Additional software requirements](#Additional software requirements)
-* [Git the codez and get it running](#Git the codez and get it running)
+1. [AWS requirements](#AWS-requirements)
+2. [Additional software requirements](#Additional-software-requirements)
+3. [Git the codez and get it running](#Git-the-codez-and-get-it-running)
 
 ## AWS requirements
 Because we are working with AWS you will need to take these AWS specific steps.
