@@ -34,4 +34,4 @@ The how to is broken up into modules.  Each module covers a specific technique o
 Adrian Pomilio
 
 ### How can I contribute?
-We are currently working out the approach for content templates and style.  We encourage anyone to pull the code and issue a pull request.
+We are currently working out the approach for content templates and style.  We encourage anyone to contribute in any positive aspect. You can clone the code and issue a pull request.
