@@ -54,7 +54,7 @@ We are going to create an S3 bucket via the AWS console.
 Creating your site
 
 1. Create a directory called www (it can be any name)
-2. > cd www
+2. cmd> cd www
 3. Inside www
     1. create a basic index.html page
     2. Create a basic error.html page
@@ -64,12 +64,12 @@ Moving your code to the S3 bucket
 
 * Option 1 - you can use the S3 bucket upload button
 * Option 2 - you can use the AWS CLI to upload your content
-    * > aws s3 sync [path to folder] s3://[your bucket name] --acl "public-read"
+    * cmd> aws s3 sync [path to folder] s3://[your bucket name] --acl "public-read"
 
 Try both options.
 
 ### BONUS
-Create a shell script that contains that can invoke the aws cli so you don't have to keep typing stuff.
+Create a shell script that can invoke the aws cli so you don't have to keep typing stuff.
 
 1. create a file named s3upload.sh
 
@@ -82,4 +82,4 @@ Create a shell script that contains that can invoke the aws cli so you don't hav
     --
 
 2. give it execute permissions > chmod u+x s3upload.sh
-3. Run the script > ./s3upload.sh
+3. Run the script cmd> ./s3upload.sh
