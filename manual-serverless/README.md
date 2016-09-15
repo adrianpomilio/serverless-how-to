@@ -1,19 +1,39 @@
 # Manual Serverless
-This group of lessons will focus on the manual process of creating a lambda and api-gateway.
+This group of lessons will focus on leveraging a Lambda function via the API-Gateway.
+
+
 
 >In progress TODO
 
+## Setup requirements
+You will need the following installed (as seen in [Getting Started](../getting-started/README.md)).
+
+* AWS cli
+* An AWS account
+
 ## Lesson 1
-We are going to create a lambda function.
+We are going to create a Lambda function.
 
-## Lesson 2
-We are going to create an api-gateway endpoint.
+> This can be done inside of the AWS console (which we will show)
+> But the prefered method is to write your code and then deploy it.
 
-## Lesson 3
-We are going to package and deploy code.
+1. cmd> mkdir first-lambda && cd first-lambda
+2. Create a file named handler.js
+3. Open handler.js in an editor and add the following code:
 
-## Lesson 4
-We are going to call the lambda via the cmd line and http
+--
+```javascript
+
+'use strict';
+
+exports.handler = (event, context, callback) => {
+    callback(null, event.key1);  
+};
+
+```
+
+
+
 
 ## BONUS
 Call the lambda function from the static site you created in the [static site module](../static-site-serverless/README.md)
