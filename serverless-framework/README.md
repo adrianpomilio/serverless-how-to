@@ -10,11 +10,11 @@ You will be able to create everything following the steps, or you can simply loo
 ### Lesson 1
 We are going to create a minimal serverless application.
 
-1. > mkdir serverless-examples && cd serverless-examples
-2. > serverless create --template aws-nodejs --path lesson-1
+1. cmd> mkdir serverless-examples && cd serverless-examples
+2. cmd> serverless create --template aws-nodejs --path lesson-1
     * this will scaffold a service that uses AWS as a provider and nodejs as your runtime.
     * you could alternately run ( serverless create --template aws-nodejs ) and the service would scaffold in the current directory
-3. > serverless deploy
+3. cmd> serverless deploy
     * This will deploy your service to AWS.
 
 * BONUS - Enter the following command:  
@@ -24,21 +24,21 @@ We are going to create a minimal serverless application.
 ### Lesson 2
 We are going to create a basic application and leverage the api-gateway.
 
-1. > cd serverless-examples
-2. > serverless create --template aws-nodejs --path lesson-2
+1. cmd> cd serverless-examples
+2. cmd> serverless create --template aws-nodejs --path lesson-2
 
 
 ### Lesson 3
 We are going to create a basic application with endpoints and return static data.
 
-1. > cd serverless-examples
-2. > serverless create --template aws-nodejs --path lesson-3
+1. cmd> cd serverless-examples
+2. cmd> serverless create --template aws-nodejs --path lesson-3
 
 ### Lesson 4
 We are going to create an application that stores and retrieves data from a datastore.
 
-1. > cd serverless-examples
-2. > serverless create --template aws-nodejs --path lesson-4
+1. cmd> cd serverless-examples
+2. cmd> serverless create --template aws-nodejs --path lesson-4
 
 ### Lesson 5
 This is a bonus lesson - tbd
