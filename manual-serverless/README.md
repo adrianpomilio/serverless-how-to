@@ -21,7 +21,6 @@ We are going to create a Lambda function.
 1. cmd> mkdir first-lambda && cd first-lambda
 2. Create a file named myFirstLambda.js
 3. Open myFirstLambda.js in an editor and add the following code
-
 ```javascript
 'use strict';
 
