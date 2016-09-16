@@ -20,7 +20,8 @@ We are going to create a Lambda function.
 
 1. cmd> mkdir first-lambda && cd first-lambda
 2. Create a file named myFirstLambda.js
-3. Open myFirstLambda.js in an editor and add the following code:
+3. Open myFirstLambda.js in an editor and add the following code
+
 --
 ```javascript
 'use strict';
@@ -31,7 +32,9 @@ exports.handler = (event, context, callback) => {
 
 ```
 --
+
 4. zip the contents of the my-first-lambda directory, but not the directory itself.  
+
 --
 ```
 cd my-first-lambda
@@ -39,6 +42,7 @@ zip -X -r ../myFirstLambda.zip *
 
 ```
 --
+
 5. Create an IAM role for you Lambda
     1. Sign into your AWS console
     2. Select the IAM (Identity Access Managment) service
@@ -53,6 +57,7 @@ zip -X -r ../myFirstLambda.zip *
     11. Copy the ARN of the role. (looks similar to this: arn:aws:iam::990312627820:role/myFirstLambda )
 
 6. From the AWS CLI you will run the following command. (Be sure to substitute your ROLE ARN from step 5 for the Role name)
+
 --
 ```
 aws lambda create-function \
