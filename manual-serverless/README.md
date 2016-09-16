@@ -31,7 +31,6 @@ exports.handler = (event, context, callback) => {
 
 ```
 --
-
 4. zip the contents of the my-first-lambda directory, but not the directory itself.  
 --
 ```
@@ -40,7 +39,6 @@ zip -X -r ../myFirstLambda.zip *
 
 ```
 --
-
 5. Create an IAM role for you Lambda
     1. Sign into your AWS console
     2. Select the IAM (Identity Access Managment) service
