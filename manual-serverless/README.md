@@ -31,6 +31,7 @@ exports.handler = (event, context, callback) => {
 };
 
 ```
+--
 
 4. zip the contents of the my-first-lambda directory, but not the directory itself.  
 
