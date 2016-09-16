@@ -53,7 +53,9 @@ zip -X -r ../myFirstLambda.zip *
     10. Select 'Create Role'
     11. Copy the ARN of the role. (looks similar to this: arn:aws:iam::990312627820:role/myFirstLambda )
 
+
 6. From the AWS CLI you will run the following command. (Be sure to substitute your ROLE ARN from step 5 for the Role name)
+
 --
 ```
 aws lambda create-function \
