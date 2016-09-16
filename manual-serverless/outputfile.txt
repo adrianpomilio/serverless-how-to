@@ -1,1 +1,1 @@
-{"errorMessage":"Bad handler myFirstLambda"}
+"value1"
