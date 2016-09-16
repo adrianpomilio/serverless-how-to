@@ -1,5 +1,5 @@
 'use strict';
 
-exports.handler = (event, context, callback) => {
+exports.myFirstLambda = (event, context, callback) => {
     callback(null, event.key1);
 };

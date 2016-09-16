@@ -34,11 +34,8 @@ We are going to create a basic application with endpoints and return static data
 1. cmd> cd serverless-examples
 2. cmd> serverless create --template aws-nodejs --path lesson-3
 
-### Lesson 4
-We are going to create an application that stores and retrieves data from a datastore.
+### BONUS
+Create an application that stores and retrieves data from a datastore.
 
 1. cmd> cd serverless-examples
-2. cmd> serverless create --template aws-nodejs --path lesson-4
-
-### Lesson 5
-This is a bonus lesson - tbd
+2. cmd> serverless create --template aws-nodejs --path bonus

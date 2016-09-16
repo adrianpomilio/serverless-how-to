@@ -3,6 +3,8 @@ There are a few things that you will need to do in advance of working through th
 
 You may skip any of the steps below if you already have satisfied the requirements for the step.
 
+>These instructions and lesson commands are presuming the use of a Mac or Linux. For window users you will have to substitute those specific commands
+
 1. [AWS requirements](#AWS-requirements)
 2. [Additional software requirements](#Additional-software-requirements)
 3. [Git the codez and get it running](#Git-the-codez-and-get-it-running)
@@ -31,7 +33,9 @@ Create an AWS account, they have a free tier but will require you to enter a cre
 You will need this tool to be able to interact with AWS via the command line, or to run scripts to automate your processes.
 
 1. Visit [AWS CLI]:http://docs.aws.amazon.com/cli/latest/userguide/installing.html
-2. Follow the official documentaton steps for your specific system
+2. Follow the official documentation steps for your specific system
+
+>Learn to love this page http://docs.aws.amazon.com/cli/latest/reference/
 
 >Please test the install out to make sure it works.
 

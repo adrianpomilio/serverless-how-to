@@ -3,13 +3,14 @@ This group of lessons will focus on leveraging a Lambda function via the API-Gat
 
 
 
->In progress TODO
+
 
 ## Setup requirements
 You will need the following installed (as seen in [Getting Started](../getting-started/README.md)).
 
 * AWS cli
 * An AWS account
+* An IAM User with Administrator rights
 
 ## Lesson 1
 We are going to create a Lambda function.
@@ -26,11 +27,35 @@ We are going to create a Lambda function.
 
 'use strict';
 
-exports.handler = (event, context, callback) => {
-    callback(null, event.key1);  
+exports.handler.myFirstLambda = (event, context, callback) => {
+    callback('{message:"my first lambda"}', event);  
 };
 
 ```
+
+
+## Lesson 2
+We are going to use the AWS CLI to upload and run our Lambda
+
+> Run this cmd> aws lambda list-functions
+This will provide you with a list of your Lambda functions, you should not see your function yet.
+
+1. cmd> cd manual-serverless   (You should be inside the manual serverless directory and be able to see the my-first-lambda directory)
+2. Create a file named lambdaUpload.sh
+3. Enter the following code in the lambdaUpload.sh file
+--
+```
+rm index.zip
+cd my-first-lambda
+zip -X -r ../index.zip *
+cd ..
+aws lambda update-function-code --function-name myFirstLambda --zip-file
+fileb://index.zip
+
+```
+--
+4. You will need to give your shell script execute permissions.  cmd> chmod u+x lambdaUpload.sh
+
 
 
 
