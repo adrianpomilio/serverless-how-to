@@ -69,6 +69,7 @@ aws lambda create-function \
 
 ```
 --
+
 7. Sign into the AWS console and select the 'Lambda' Service. You should now see your function.
 
 ## Lesson 2
