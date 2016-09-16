@@ -130,7 +130,7 @@ outputfile.txt
 ```
 --
 * View the results on the cmd line
-* Open the outputfile.txt and you should see the change
+* Open the outputfile txt and you should see the change
 
 ## Lesson 5
 Remove your Lambda function with the AWS CLI
