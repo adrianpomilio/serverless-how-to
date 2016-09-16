@@ -19,46 +19,134 @@ We are going to create a Lambda function.
 > But the prefered method is to write your code and then deploy it.
 
 1. cmd> mkdir first-lambda && cd first-lambda
-2. Create a file named handler.js
-3. Open handler.js in an editor and add the following code:
+2. Create a file named myFirstLambda.js
+3. Open myFirstLambda.js in an editor and add the following code:
 
 --
 ```javascript
-
 'use strict';
 
-exports.handler.myFirstLambda = (event, context, callback) => {
-    callback('{message:"my first lambda"}', event);  
+exports.handler = (event, context, callback) => {
+    callback(null, event.key1);
 };
 
 ```
+4. zip the contents of the my-first-lambda directory, but not the directory itself.  
+--
+```
+cd my-first-lambda
+zip -X -r ../myFirstLambda.zip *
 
+```
+--
+5. Create an IAM role for you Lambda
+
+    1. Sign into your AWS console
+    2. Select the IAM (Identity Access Managment) service
+    3. Select 'Roles'
+    4. Select 'Create New Role'
+    5. Enter a name for your Lambda: myFirstLambda  (I usually use the method name as part of it.)
+    6. Select 'Next'
+    7. Select 'AWS Service Roles'
+    8. Select 'AWS Lambda'
+    9. Attach a Policy (Administrator Access - just for these lessons)
+    10. Select 'Create Role'
+    11. Copy the ARN of the role. (looks similar to this: arn:aws:iam::990312627820:role/myFirstLambda )
+
+6. From the AWS CLI you will run the following command. (Be sure to substitute your ROLE ARN from step 5 for the Role name)
+--
+```
+aws lambda create-function \
+ --region us-east-1 \
+ --function-name myFirstLambda \
+ --zip-file fileb://myFirstLambda.zip \
+ --role <your arn role goes here> \
+ --handler myFirstLambda.handler \
+ --runtime nodejs4.3 \
+ --profile default
+
+```
+--
+7. Sign into the AWS console and select the 'Lambda' Service. You should now see your function.
 
 ## Lesson 2
-We are going to use the AWS CLI to upload and run our Lambda
+We are going to use the AWS CLI to invoke our Lambda
+
+1. From the AWS CLI enter the following command
+
+--
+```
+aws lambda invoke \
+--invocation-type RequestResponse \
+--function-name myFirstLambda \
+--log-type Tail \
+--payload '{"key3": "value3","key2": "value2","key1": "value1"}' \
+--profile default \
+outputfile.txt
+```
+--
+
+2. View the results on the cmd line
+3. Open the outputfile.txt, your results should be similar to
+--
+```
+"value1"
+```
+--
+## Lesson 3
+We are going to use the AWS CLI to update our Lambda
 
 > Run this cmd> aws lambda list-functions
 This will provide you with a list of your Lambda functions, you should not see your function yet.
 
 1. cmd> cd manual-serverless   (You should be inside the manual serverless directory and be able to see the my-first-lambda directory)
-2. Create a file named lambdaUpload.sh
+2. Create a file named lambdaUpdate.sh
 3. Enter the following code in the lambdaUpload.sh file
 --
 ```
-rm index.zip
+#!/bin/sh
+rm myFirstLambda.zip
 cd my-first-lambda
-zip -X -r ../index.zip *
+zip -X -r ../myFirstLambda.zip *
 cd ..
-aws lambda update-function-code --function-name myFirstLambda --zip-file
-fileb://index.zip
+aws lambda update-function-code --function-name myFirstLambda --zip-file fileb://myFirstLambda.zip
+
 
 ```
 --
-4. You will need to give your shell script execute permissions.  cmd> chmod u+x lambdaUpload.sh
+4. You will need to give your shell script execute permissions.  cmd> chmod u+x lambdaUpdate.sh
 
+5. Change the value of the payload key1 in the below AWS CLI command, and run it.
+--
+```
+aws lambda invoke \
+--invocation-type RequestResponse \
+--function-name myFirstLambda \
+--log-type Tail \
+--payload '{"key3": "value3","key2": "value2","key1": "value1"}' \
+--profile default \
+outputfile.txt
+```
+--
+6. View the results on the cmd line
+7. Open the outputfile.txt and you should see the change
 
+## Lesson 5
+Remove your Lambda function with the AWS CLI
 
+1. To remove your Lambda function from AWS enter the following command on the AWS CLI
 
+--
+```
+aws lambda delete-function \
+ --function-name myFirstLambda \
+ --region us-east-1 \
+--profile default
+
+```
+--
+
+> Side Note : Inside the source for the lessons you will find shell scripts that you can run instead of typing the commands over and over and over and over and over again.
 
 ## BONUS
 Call the lambda function from the static site you created in the [static site module](../static-site-serverless/README.md)
