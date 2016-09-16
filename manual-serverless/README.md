@@ -22,7 +22,6 @@ We are going to create a Lambda function.
 2. Create a file named myFirstLambda.js
 3. Open myFirstLambda.js in an editor and add the following code
 
---
 ```javascript
 'use strict';
 
@@ -31,8 +30,6 @@ exports.handler = (event, context, callback) => {
 };
 
 ```
---
-
 4. zip the contents of the my-first-lambda directory, but not the directory itself.  
 
 --
