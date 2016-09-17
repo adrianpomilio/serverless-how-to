@@ -68,12 +68,12 @@ aws lambda create-function \
 ```
 --
 
-* Sign into the AWS console and select the 'Lambda' Service. You should now see your function.
+* Sign into the AWS console and select the Lambda Service. You should now see your function.
 
 ## Lesson 2
 We are going to use the AWS CLI to invoke our Lambda
 
-* From the AWS CLI enter the following command
+*  From the AWS CLI enter the following command
 
 --
 ```
