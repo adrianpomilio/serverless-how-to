@@ -94,15 +94,16 @@ outputfile.txt
 "value1"
 ```
 --
+
 ## Lesson 3
 We are going to use the AWS CLI to update our Lambda
 
 > Run this cmd> aws lambda list-functions
-This will provide you with a list of your Lambda functions, you should not see your function yet.
+>This will provide you with a list of your Lambda functions, >you should not see your function yet.
 
 * cmd> cd manual-serverless   (You should be inside the manual serverless directory and be able to see the my-first-lambda directory)
 * Create a file named lambdaUpdate.sh
-* Enter the following code in the lambdaUpload.sh file
+* Enter the following code in the lambdaUpload file
 --
 ```
 #!/bin/sh
