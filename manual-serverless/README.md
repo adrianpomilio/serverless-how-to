@@ -102,6 +102,7 @@ We are going to use the AWS CLI to update our Lambda
 >This will provide you with a list of your Lambda functions, >you should not see your function yet.
 
 * cmd> cd manual-serverless   (You should be inside the manual serverless directory and be able to see the my-first-lambda directory)
+
 * Create a file named lambdaUpdate
 * Enter the following code in the lambdaUpload file
 --
@@ -116,7 +117,7 @@ aws lambda update-function-code --function-name myFirstLambda --zip-file fileb:/
 
 ```
 --
-* You will need to give your shell script execute permissions.  cmd> chmod u+x lambdaUpdate 
+* You will need to give your shell script execute permissions.  cmd> chmod u+x lambdaUpdate
 
 * Change the value of the payload key1 in the below AWS CLI command, and run it.
 --
